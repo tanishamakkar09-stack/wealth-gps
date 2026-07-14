@@ -1,1 +1,12 @@
+__pycache__/
+*.pyc
 
+uploads/
+reports/
+
+Meeting_Bookings.xlsx
+database.db
+
+config.py
+
+.env
