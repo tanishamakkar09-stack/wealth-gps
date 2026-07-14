@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Risk Assessment</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#F8F5F0;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.card-box{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.12);
+    border-top:5px solid #C8A24A;
+    margin-top:40px;
+}
+
+.brand{
+    color:#8B1E2D;
+    font-weight:700;
+}
+
+.btn-ar{
+    background:#8B1E2D;
+    color:white;
+    border:none;
+    font-weight:bold;
+}
+
+.btn-ar:hover{
+    background:#6B1020;
+    color:white;
+}
+
+.question{
+    margin-bottom:25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card-box">
+
+<div class="text-center mb-4">
+
+<img src="{{ url_for('static', filename='logo.png') }}"
+style="max-width:250px;">
+
+</div>
+
+<h2 class="brand text-center">
+Investor Risk Assessment
+</h2>
+
+<p class="text-center">
+Help us understand your investment behaviour and risk tolerance.
+</p>
+
+<form action="/goals" method="POST">
+
+
+<input type="hidden" name="name" value="{{ name }}">
+<input type="hidden" name="mobile" value="{{ mobile }}">
+<input type="hidden" name="email" value="{{ email }}">
+
+<input type="hidden" name="age" value="{{age}}">
+<input type="hidden" name="occupation" value="{{occupation}}">
+<input type="hidden" name="marital_status" value="{{marital_status}}">
+<input type="hidden" name="annual_income" value="{{annual_income}}">
+<input type="hidden" name="monthly_sip" value="{{monthly_sip}}">
+<input type="hidden" name="retirement_age" value="{{retirement_age}}">
+
+<!-- Financial Profile -->
+
+<input type="hidden" name="direct_equity" value="{{direct_equity}}">
+<input type="hidden" name="mutual_funds" value="{{mutual_funds}}">
+<input type="hidden" name="fd" value="{{fd}}">
+<input type="hidden" name="ppf" value="{{ppf}}">
+<input type="hidden" name="epf" value="{{epf}}">
+<input type="hidden" name="nps" value="{{nps}}">
+<input type="hidden" name="bonds" value="{{bonds}}">
+<input type="hidden" name="gold" value="{{gold}}">
+<input type="hidden" name="real_estate" value="{{real_estate}}">
+<input type="hidden" name="insurance" value="{{insurance}}">
+<input type="hidden" name="alternate" value="{{alternate}}">
+<input type="hidden" name="cash" value="{{cash}}">
+<input type="hidden" name="dependents" value="{{dependents}}">
+<div class="question">
+
+<label class="fw-bold">
+1. What average rate of return would you expect to earn on an investment portfolio over the next 10 years?
+</label>
+
+<select class="form-control mt-2" name="return_expectation" required>
+
+<option value="1">About the same rate as Bank Fixed Deposits</option>
+<option value="2">1% more than the rate of Bank Fixed Deposits</option>
+<option value="3">3% more than the rate of Bank Fixed Deposits</option>
+<option value="4">About one and a half times the rate of Bank Fixed Deposits</option>
+<option value="5">About twice the rate of Bank Fixed Deposits</option>
+
+</select>
+
+</div>
+
+<div class="question">
+
+<label class="fw-bold">
+2. What is your investment time horizon?
+</label>
+
+<select class="form-control mt-2" name="time_horizon" required>
+
+<option value="1">Less than 1 year</option>
+<option value="2">1 to 3 years</option>
+<option value="3">4 to 6 years</option>
+<option value="4">7 to 10 years</option>
+<option value="5">More than 10 years</option>
+required
+</select>
+
+</div>
+
+<div class="question">
+
+<label class="fw-bold">
+3. When it comes to understanding investments, how would you rate your knowledge?
+</label>
+
+<select class="form-control mt-2" name="investment_knowledge" required>
+
+<option value="1">Very limited knowledge</option>
+<option value="2">Basic knowledge</option>
+<option value="3">Fair amount of knowledge</option>
+<option value="4">Considerable knowledge</option>
+<option value="5">Extensive knowledge</option>
+required
+</select>
+
+</div>
+
+<div class="question">
+
+<label class="fw-bold">
+4. How would you classify your family's overall financial situation?
+</label>
+
+<select class="form-control mt-2" name="financial_situation" required>
+
+<option value="1">No savings and significant debt</option>
+<option value="2">Little savings and fair amount of debt</option>
+<option value="3">Some savings and some debt</option>
+<option value="4">Save regularly and have paid off most debts</option>
+<option value="5">Negligible debt and financially secure</option>
+required
+</select>
+
+</div>
+
+<label class="fw-bold">
+5. Which of the following portfolios would you like to invest in?
+</label>
+
+<select class="form-control mt-2" name="portfolio_choice" required>
+
+<option value="1">Portfolio A - Safe investment with no loss</option>
+<option value="2">Portfolio B - 5% loss for 15% upside</option>
+<option value="3">Portfolio C - 10% loss for 25% upside</option>
+<option value="4">Portfolio D - 15% loss for 40% upside</option>
+<option value="5">Portfolio E - More than 20% loss for more than 50% upside</option>
+required
+</select>
+
+</div>
+
+<p class="text-center text-muted mt-4 mb-4" style="font-size:14px;">
+    All responses are used solely to generate your personalized investment profile.
+</p>
+
+<button
+type="submit"
+class="btn btn-ar btn-lg w-100">
+
+    Continue To Goal Planning
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

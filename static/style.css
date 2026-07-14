@@ -1,0 +1,217 @@
+body{
+    background:#F7F5F2;
+    font-family:'Segoe UI',sans-serif;
+    color:#333;
+}
+
+/* ================= HEADER ================= */
+
+.brand{
+    color:#8B1E2D;
+    font-weight:700;
+}
+
+.section-title{
+    color:#8B1E2D;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+/* ================= KPI CARDS ================= */
+
+.metric-card{
+    background:#ffffff;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    height:100%;
+    border-top:5px solid #C8A24A;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:all .3s ease;
+}
+
+.metric-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.12);
+}
+
+.metric-card h6{
+    color:#555;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.metric{
+    font-size:30px;
+    font-weight:700;
+    color:#8B1E2D;
+}
+
+/* ================= CHART BOX ================= */
+
+.chart-box{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    height:100%;
+}
+
+.chart-box h5{
+    color:#8B1E2D;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+canvas{
+    width:100% !important;
+    height:300px !important;
+}
+
+/* ================= INSIGHT BOX ================= */
+
+.insight-box{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    border-left:6px solid #C8A24A;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    height:100%;
+}
+
+.insight-box h4{
+    color:#8B1E2D;
+    font-weight:700;
+}
+
+.insight-box p{
+    line-height:1.8;
+    margin-bottom:0;
+}
+
+/* ================= GOAL CARDS ================= */
+
+.metric-card hr{
+    border-top:2px solid #C8A24A;
+    opacity:1;
+}
+
+.metric-card p{
+    margin-bottom:8px;
+}
+
+.metric-card h4{
+    color:#8B1E2D;
+    font-weight:700;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn{
+    border-radius:12px;
+    font-weight:600;
+    padding:14px;
+    transition:.3s;
+}
+
+.btn-ar{
+    background:#8B1E2D;
+    color:#fff;
+    border:none;
+}
+
+.btn-ar:hover{
+    background:#6B1020;
+    color:#fff;
+}
+
+.btn-success{
+    background:#198754;
+    border:none;
+}
+
+.btn-success:hover{
+    background:#157347;
+}
+
+/* ================= SPACING ================= */
+
+.row{
+    margin-bottom:15px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:992px){
+
+.metric{
+    font-size:26px;
+}
+
+canvas{
+    height:260px !important;
+}
+
+}
+
+@media (max-width:768px){
+
+.metric{
+    font-size:22px;
+}
+
+.metric-card,
+.chart-box,
+.insight-box{
+    padding:20px;
+}
+
+canvas{
+    height:240px !important;
+}
+
+}
+/* ================= FAMILY TABLE ================= */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead{
+
+    background:#8B1E2D;
+
+    color:white;
+
+}
+
+.table thead th{
+
+    background:#8B1E2D !important;
+
+    color:white;
+
+    border:none;
+
+}
+
+.table tbody tr{
+
+    transition:.25s;
+
+}
+
+.table tbody tr:hover{
+
+    background:#FFF8E8;
+
+}
+
+.table td{
+
+    vertical-align:middle;
+
+}

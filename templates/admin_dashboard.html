@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Relationship Manager Portal
+
+</title>
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='admin.css') }}">
+
+</head>
+
+<body>
+
+<div class="header">
+
+<div>
+
+<h1>
+
+ANAND RATHI PREFERRED
+
+</h1>
+
+<p>
+
+Relationship Manager Portal
+
+</p>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+Total Clients
+
+</h3>
+
+<h1>
+
+{{ total_clients }}
+
+</h1>
+
+</div>
+
+<div class="card">
+
+<h3>
+Pending Meetings
+</h3>
+
+<h1>
+{{ pending }}
+</h1>
+
+</div>
+
+<div class="card">
+
+<div class="card">
+
+<h3>
+
+Reports Generated
+
+</h3>
+
+<h1>
+
+{{ reports }}
+
+</h1>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card">
+
+<h3>
+
+Documents Uploaded
+
+</h3>
+
+<h1>
+
+{{ documents }}
+
+</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="Search Client Name, Mobile or Email..."
+onkeyup="searchTable()">
+
+</div>
+
+<!-- Download Excel Button -->
+
+<div style="display:flex;justify-content:flex-end;margin-bottom:20px;">
+
+<a
+href="/download-excel"
+class="btn">
+
+📥 Download Excel
+
+</a>
+
+</div>
+
+<table id="clientTable">
+
+<thead>
+
+...
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Mobile</th>
+
+<th>Email</th>
+
+<th>Meeting Date</th>
+
+<th>Status</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for client in clients %}
+
+<tr>
+
+<td>{{ client["Client Name"] }}</td>
+
+<td>{{ client["Mobile"] }}</td>
+
+<td>{{ client["Email"] }}</td>
+
+<td>{{ client["Meeting Date"] }}</td>
+
+<td>
+
+<td>
+
+<form
+action="/update-status/{{ loop.index0 }}"
+method="POST"
+style="display:flex;gap:8px;align-items:center;">
+
+<select
+name="status"
+class="status-dropdown">
+
+<option value="Pending"
+{% if client["Status"]=="Pending" %}selected{% endif %}>
+Pending
+</option>
+
+<option value="Confirmed"
+{% if client["Status"]=="Confirmed" %}selected{% endif %}>
+Confirmed
+</option>
+
+<option value="Completed"
+{% if client["Status"]=="Completed" %}selected{% endif %}>
+Completed
+</option>
+
+<option value="Cancelled"
+{% if client["Status"]=="Cancelled" %}selected{% endif %}>
+Cancelled
+</option>
+
+</select>
+
+<button
+type="submit"
+class="btn">
+
+Save
+
+</button>
+
+</form>
+
+</td>
+</td>
+
+<td>
+
+<a
+
+href="/client/{{ loop.index0 }}"
+
+class="btn">
+
+View
+
+</a>
+
+<a
+href="/view-pdf/{{ client['PDF Report'] }}"
+target="_blank"
+class="btn">
+
+PDF
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+<br><br>
+
+<div class="status-summary">
+
+<div class="summary-card">
+
+<h3>Pending</h3>
+
+<h1>{{ pending }}</h1>
+
+</div>
+
+<div class="summary-card">
+
+<h3>Confirmed</h3>
+
+<h1>{{ confirmed }}</h1>
+
+</div>
+
+<div class="summary-card">
+
+<h3>Completed</h3>
+
+<h1>{{ completed }}</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function searchTable(){
+
+let input=document.getElementById("search").value.toUpperCase();
+
+let table=document.getElementById("clientTable");
+
+let tr=table.getElementsByTagName("tr");
+
+for(let i=1;i<tr.length;i++){
+
+let txt=tr[i].innerText.toUpperCase();
+
+tr[i].style.display=txt.indexOf(input)>-1?"":"none";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

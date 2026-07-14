@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Financial Goal Planning</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#F8F5F0;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.card-box{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.12);
+    border-top:5px solid #C8A24A;
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+.brand{
+    color:#8B1E2D;
+    font-weight:700;
+}
+
+.btn-ar{
+    background:#8B1E2D;
+    color:white;
+    border:none;
+    font-weight:bold;
+}
+
+.btn-ar:hover{
+    background:#6B1020;
+    color:white;
+}
+
+.section-title{
+    margin-top:25px;
+    margin-bottom:10px;
+    font-weight:600;
+    color:#8B1E2D;
+}
+
+.goal-info{
+    background:#FFF8E8;
+    border-left:5px solid #C8A24A;
+    color:#444;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:25px;
+}
+
+.goal-box{
+    background:#fafafa;
+    border:1px solid #e7e7e7;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card-box">
+
+<div class="text-center mb-4">
+
+<img
+src="{{ url_for('static', filename='logo.png') }}"
+style="max-width:250px;">
+
+</div>
+
+<h2 class="brand text-center">
+Financial Goal Planning
+</h2>
+
+<p class="text-center">
+Let's understand what you want your wealth to achieve.
+</p>
+
+<div class="goal-info">
+
+<strong>Planning Your Financial Future</strong>
+
+<br><br>
+
+You can plan for up to
+<strong>three major financial goals</strong>
+such as retirement planning,
+wealth creation,
+children's education,
+children's marriage
+or any other financial objective.
+
+<br><br>
+
+<strong>Goal 1</strong> is mandatory.
+
+<strong>Goal 2</strong> and
+
+<strong>Goal 3</strong>
+
+are optional.
+Leave them blank if they are not applicable.
+
+</div>
+
+<form action="/family-information" method="POST">
+
+<input type="hidden" name="name" value="{{ name }}">
+<input type="hidden" name="mobile" value="{{ mobile }}">
+<input type="hidden" name="email" value="{{ email }}">
+
+<input type="hidden" name="age" value="{{age}}">
+<input type="hidden" name="occupation" value="{{occupation}}">
+<input type="hidden" name="marital_status" value="{{marital_status}}">
+<input type="hidden" name="annual_income" value="{{annual_income}}">
+<input type="hidden" name="monthly_sip" value="{{monthly_sip}}">
+<input type="hidden" name="retirement_age" value="{{retirement_age}}">
+
+<!-- Financial Profile -->
+
+<input type="hidden" name="direct_equity" value="{{direct_equity}}">
+<input type="hidden" name="mutual_funds" value="{{mutual_funds}}">
+<input type="hidden" name="fd" value="{{fd}}">
+<input type="hidden" name="ppf" value="{{ppf}}">
+<input type="hidden" name="epf" value="{{epf}}">
+<input type="hidden" name="nps" value="{{nps}}">
+<input type="hidden" name="bonds" value="{{bonds}}">
+<input type="hidden" name="gold" value="{{gold}}">
+<input type="hidden" name="real_estate" value="{{real_estate}}">
+<input type="hidden" name="insurance" value="{{insurance}}">
+<input type="hidden" name="alternate" value="{{alternate}}">
+<input type="hidden" name="cash" value="{{cash}}">
+<input type="hidden" name="dependents" value="{{dependents}}">
+
+<input type="hidden" name="return_expectation" value="{{return_expectation}}">
+<input type="hidden" name="time_horizon" value="{{time_horizon}}">
+<input type="hidden" name="investment_knowledge" value="{{investment_knowledge}}">
+<input type="hidden" name="financial_situation" value="{{financial_situation}}">
+<input type="hidden" name="portfolio_choice" value="{{portfolio_choice}}">
+
+<!-- ================= GOAL 1 ================= -->
+
+<div class="goal-box">
+
+<h4 class="brand">
+Goal 1
+</h4>
+
+<label class="section-title">
+Goal Type
+</label>
+
+<select
+class="form-control mb-3"
+name="goal1"
+required>
+
+<option value="">Select Goal</option>
+
+<option>Retirement Planning</option>
+
+<option>Wealth Creation</option>
+
+<option>Child Education</option>
+
+<option>Child Marriage</option>
+
+<option>Financial Freedom</option>
+
+<option>Other (Please Specify)</option>
+
+</select>
+
+<label class="section-title">
+If Other, Please Specify
+</label>
+
+<input
+type="text"
+class="form-control mb-3"
+name="goal1_other"
+placeholder="Enter Custom Goal">
+
+<label class="section-title">
+Target Corpus Required (₹)
+</label>
+
+<input
+type="number"
+class="form-control mb-3"
+name="goal1_corpus"
+placeholder="Enter Target Corpus"
+required
+min="0">
+
+<label class="section-title">
+Target Year
+</label>
+
+<input
+type="number"
+class="form-control"
+name="goal1_year"
+placeholder="Enter Target Year"
+min="2026"
+max="2100"
+required>
+<!-- ================= GOAL 2 ================= -->
+
+</div>
+
+<div class="goal-box">
+
+<h4 class="brand">
+Goal 2 (Optional)
+</h4>
+
+<label class="section-title">
+Goal Type
+</label>
+
+<select
+class="form-control mb-3"
+name="goal2">
+
+<option value="">None</option>
+
+<option>Retirement Planning</option>
+
+<option>Wealth Creation</option>
+
+<option>Child Education</option>
+
+<option>Child Marriage</option>
+
+<option>Financial Freedom</option>
+
+<option>Other (Please Specify)</option>
+
+</select>
+
+<label class="section-title">
+If Other, Please Specify
+</label>
+
+<input
+type="text"
+class="form-control mb-3"
+name="goal2_other"
+placeholder="Enter Custom Goal">
+
+<label class="section-title">
+Target Corpus Required (₹)
+</label>
+
+<input
+type="number"
+class="form-control mb-3"
+name="goal2_corpus"
+placeholder="Enter Target Corpus"
+min="0">
+
+<label class="section-title">
+Target Year
+</label>
+
+<input
+type="number"
+class="form-control"
+name="goal2_year"
+placeholder="Enter Target Year"
+min="2026"
+max="2100">
+
+</div>
+
+<!-- ================= GOAL 3 ================= -->
+
+<div class="goal-box">
+
+<h4 class="brand">
+Goal 3 (Optional)
+</h4>
+
+<label class="section-title">
+Goal Type
+</label>
+
+<select
+class="form-control mb-3"
+name="goal3">
+
+<option value="">None</option>
+
+<option>Retirement Planning</option>
+
+<option>Wealth Creation</option>
+
+<option>Child Education</option>
+
+<option>Child Marriage</option>
+
+<option>Financial Freedom</option>
+
+<option>Other (Please Specify)</option>
+
+</select>
+
+<label class="section-title">
+If Other, Please Specify
+</label>
+
+<input
+type="text"
+class="form-control mb-3"
+name="goal3_other"
+placeholder="Enter Custom Goal">
+
+<label class="section-title">
+Target Corpus Required (₹)
+</label>
+
+<input
+type="number"
+class="form-control mb-3"
+name="goal3_corpus"
+placeholder="Enter Target Corpus"
+min="0">
+
+<label class="section-title">
+Target Year
+</label>
+
+<input
+type="number"
+class="form-control mb-4"
+name="goal3_year"
+placeholder="Enter Target Year"
+min="2026"
+max="2100">
+
+<hr>
+
+<h5 class="section-title">
+Emergency Fund Available?
+</h5>
+
+<select
+class="form-control mb-4"
+name="emergency_fund"
+required>
+
+<option value="">Select</option>
+
+<option>Yes</option>
+
+<option>No</option>
+
+</select>
+
+<h5 class="section-title">
+Expected Monthly Retirement Income (₹)
+</h5>
+
+<input
+type="number"
+class="form-control mb-4"
+name="retirement_income"
+placeholder="Enter Expected Monthly Income"
+min="0">
+
+<div class="alert alert-warning">
+
+<strong>Why do we ask this?</strong>
+
+<br><br>
+
+Your financial goals help us evaluate whether your current investments, savings and future plans are sufficient to achieve the life you envision.
+
+This information is also used to calculate your goal achievement score, retirement readiness and personalized recommendations.
+
+</div>
+
+<button
+type="submit"
+class="btn btn-ar btn-lg w-100">
+
+Continue to Family Information
+
+</button>
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+// Goal 1
+
+const goal1 = document.querySelector('select[name="goal1"]');
+const goal1Other = document.querySelector('input[name="goal1_other"]');
+
+goal1Other.style.display = "none";
+
+goal1.addEventListener("change", function(){
+
+if(this.value === "Other (Please Specify)"){
+    goal1Other.style.display = "block";
+    goal1Other.required = true;
+}
+else{
+    goal1Other.style.display = "none";
+    goal1Other.required = false;
+    goal1Other.value = "";
+}
+
+});
+
+// Goal 2
+
+const goal2 = document.querySelector('select[name="goal2"]');
+const goal2Other = document.querySelector('input[name="goal2_other"]');
+
+goal2Other.style.display = "none";
+
+goal2.addEventListener("change", function(){
+
+if(this.value === "Other (Please Specify)"){
+    goal2Other.style.display = "block";
+}
+else{
+    goal2Other.style.display = "none";
+    goal2Other.value = "";
+}
+
+});
+
+// Goal 3
+
+const goal3 = document.querySelector('select[name="goal3"]');
+const goal3Other = document.querySelector('input[name="goal3_other"]');
+
+goal3Other.style.display = "none";
+
+goal3.addEventListener("change", function(){
+
+if(this.value === "Other (Please Specify)"){
+    goal3Other.style.display = "block";
+}
+else{
+    goal3Other.style.display = "none";
+    goal3Other.value = "";
+}
+
+});
+
+</script>
+
+</body>
+
+</html>

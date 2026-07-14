@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Booking Successful
+
+</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<style>
+
+body{
+
+    background:#F8F5F0;
+
+    font-family:'Segoe UI',sans-serif;
+
+}
+
+.success-card{
+
+    background:white;
+
+    max-width:900px;
+
+    margin:50px auto;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+    border-top:6px solid #C8A24A;
+
+    padding:45px;
+
+}
+
+.logo{
+
+    width:240px;
+
+    display:block;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+}
+
+.success-icon{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    background:#198754;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:45px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+}
+
+.title{
+
+    color:#8B1E2D;
+
+    text-align:center;
+
+    font-weight:700;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:35px;
+
+}
+
+.info-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:25px;
+
+}
+
+.info-table td{
+
+    padding:14px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.info-table td:first-child{
+
+    font-weight:bold;
+
+    color:#8B1E2D;
+
+    width:40%;
+
+}
+
+.report-box{
+
+    margin-top:40px;
+
+    background:#FFF9EE;
+
+    border-left:6px solid #C8A24A;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+.btn-ar{
+
+    background:#8B1E2D;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+.btn-ar:hover{
+
+    background:#6B1020;
+
+    color:white;
+
+}
+
+.btn-home{
+
+    background:#C8A24A;
+
+    color:#333;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+.btn-home:hover{
+
+    background:#b8923d;
+
+    color:#333;
+
+}
+
+.button-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:35px;
+
+}
+
+.footer{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="success-card">
+
+<img
+src="{{ url_for('static', filename='logo.png') }}"
+class="logo">
+
+<div class="success-icon">
+
+✓
+
+</div>
+
+<h2 class="title">
+
+Meeting Successfully Scheduled
+
+</h2>
+
+<p class="subtitle">
+
+Thank you for choosing Anand Rathi Preferred.
+
+Your complimentary portfolio review has been successfully booked.
+
+</p>
+
+<table class="info-table">
+
+<tr>
+
+<td>
+
+Client Name
+
+</td>
+
+<td>
+
+{{ name }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Mobile Number
+
+</td>
+
+<td>
+
+{{ mobile }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Email Address
+
+</td>
+
+<td>
+
+{{ email }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Relationship Manager
+
+</td>
+
+<td>
+
+{{ relationship_manager }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Meeting Date
+
+</td>
+
+<td>
+
+{{ meeting_date }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Meeting Time
+
+</td>
+
+<td>
+
+{{ meeting_time }}
+
+</td>
+
+</tr>
+
+{% if notes %}
+
+<tr>
+
+<td>
+
+Additional Notes
+
+</td>
+
+<td>
+
+{{ notes }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</table>
+
+<div class="report-box">
+
+<h4 style="color:#8B1E2D;">
+
+🎉 Your Wealth GPS Financial Report is Ready
+
+</h4>
+
+<p>
+
+Thank you for scheduling your portfolio review.
+
+You can now download your personalized financial report containing your portfolio analysis, retirement projections, financial goals, and advisor recommendations.
+
+</p>
+
+</div>
+
+<div class="button-row">
+
+<form action="/download-report" method="POST">
+
+<button
+type="submit"
+class="btn-ar">
+
+📄 Download Financial Report
+
+</button>
+
+</form>
+
+<a
+href="/"
+class="btn-home">
+
+🏠 Return Home
+
+</a>
+
+</div>
+
+<div class="footer">
+
+© Anand Rathi Preferred
+
+<br>
+
+Your trusted partner in wealth creation.
+
+</div>
+
+</div>
+
+</body>
+
+</html>

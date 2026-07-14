@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Wealth GPS Financial Report
+
+</title>
+
+
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='report.css') }}">
+
+</head>
+
+<body>
+
+<!-- ===================================================== -->
+<!-- COVER PAGE -->
+<!-- ===================================================== -->
+
+<section class="cover-page">
+
+<div class="cover-overlay">
+
+<div class="cover-content">
+
+<h5 class="company">
+
+ANAND RATHI PREFERRED
+
+</h5>
+
+<h1 class="main-title">
+
+WEALTH GPS
+
+</h1>
+
+<h3 class="sub-title">
+
+PERSONALIZED FINANCIAL PLANNING REPORT
+
+</h3>
+
+<div class="gold-line"></div>
+
+<div class="prepared-for">
+
+<p>
+
+Prepared Exclusively For
+
+</p>
+
+<h1>
+
+{{ name }}
+
+</h1>
+
+</div>
+
+<table class="cover-table">
+
+<tr>
+
+<td>
+
+Client Name
+
+</td>
+
+<td>
+
+{{ name }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Mobile Number
+
+</td>
+
+<td>
+
+{{ mobile }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Email Address
+
+</td>
+
+<td>
+
+{{ email }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Occupation
+
+</td>
+
+<td>
+
+{{ occupation }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Marital Status
+
+</td>
+
+<td>
+
+{{ marital_status }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Report Date
+
+</td>
+
+<td>
+
+{{ report_date }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Report ID
+
+</td>
+
+<td>
+
+{{ report_id }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Relationship Manager
+
+</td>
+
+<td>
+
+Anand Rathi Preferred
+
+</td>
+
+</tr>
+
+</table>
+
+<div class="confidential-box">
+
+CONFIDENTIAL DOCUMENT
+
+<br>
+
+Prepared exclusively for the above client.
+
+Unauthorized distribution or reproduction is prohibited.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="page-break"></div>
+
+<!-- ===================================================== -->
+<!-- EXECUTIVE SUMMARY -->
+<!-- ===================================================== -->
+
+<section class="page">
+
+<div class="page-header">
+
+<h2>
+
+Executive Summary
+
+</h2>
+
+<p>
+
+This report provides a comprehensive overview of your current financial position,
+investment profile, retirement preparedness, goal planning and portfolio allocation.
+The analysis is based on the information voluntarily shared during the Wealth GPS assessment.
+
+</p>
+
+</div>
+
+<div class="summary-grid">
+
+<div class="summary-card">
+
+<h5>
+
+Risk Profile
+
+</h5>
+
+<h2>
+
+{{ risk_profile }}
+
+</h2>
+
+<p>
+
+Investor Classification
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<h5>
+
+Financial Stability
+
+</h5>
+
+<h2>
+
+{{ financial_stability }}/100
+
+</h2>
+
+<p>
+
+Current Stability Score
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<h5>
+
+Retirement Readiness
+
+</h5>
+
+<h2>
+
+{{ readiness }}%
+
+</h2>
+
+<p>
+
+Retirement Preparedness
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<h5>
+
+Goal Achievement
+
+</h5>
+
+<h2>
+
+{{ goal_achievement }}%
+
+</h2>
+
+<p>
+
+Financial Goal Progress
+
+</p>
+
+</div>
+
+</div>
+
+<div class="executive-box">
+
+<h4>
+
+Executive Interpretation
+
+</h4>
+
+<p>
+
+Your current financial assessment indicates a
+
+<strong>
+
+{{ risk_profile }}
+
+</strong>
+
+investment profile.
+
+Your financial stability score is
+
+<strong>
+
+{{ financial_stability }}/100
+
+</strong>
+
+and your retirement readiness stands at
+
+<strong>
+
+{{ readiness }}%.
+
+</strong>
+
+Based on your current savings pattern and financial information,
+your estimated retirement corpus is
+
+<strong>
+
+₹ {{ corpus }}
+
+</strong>.
+
+The recommendations in this report are designed to improve long-term wealth creation,
+risk diversification and financial security.
+
+</p>
+
+</div>
+
+<div class="footer">
+
+Anand Rathi Preferred | Wealth GPS Report
+
+</div>
+
+</section>
+
+<div class="page-break"></div>
+<!-- ===================================================== -->
+<!-- CLIENT PROFILE -->
+<!-- ===================================================== -->
+
+<section class="page">
+
+<div class="page-header">
+
+<h2>
+
+Client Profile
+
+</h2>
+
+<p>
+
+The following information summarizes the personal and financial background provided during the Wealth GPS assessment.
+
+</p>
+
+</div>
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Personal Information
+
+</h4>
+
+<table class="professional-table">
+
+<tr>
+
+<th width="35%">Parameter</th>
+
+<th>Details</th>
+
+</tr>
+
+<tr>
+
+<td>Client Name</td>
+
+<td>{{ name }}</td>
+
+</tr>
+
+<tr>
+
+<td>Mobile Number</td>
+
+<td>{{ mobile }}</td>
+
+</tr>
+
+<tr>
+
+<td>Email Address</td>
+
+<td>{{ email }}</td>
+
+</tr>
+
+<tr>
+
+<td>Occupation</td>
+
+<td>{{ occupation }}</td>
+
+</tr>
+
+<tr>
+
+<td>Marital Status</td>
+
+<td>{{ marital_status }}</td>
+
+</tr>
+
+<tr>
+
+<td>Age</td>
+
+<td>{{ age }} Years</td>
+
+</tr>
+
+<tr>
+
+<td>Annual Income</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(annual_income) }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Monthly SIP</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(monthly_sip) }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Retirement Age</td>
+
+<td>
+
+{{ retirement_age }} Years
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Years Remaining</td>
+
+<td>
+
+{{ years }} Years
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Dependents</td>
+
+<td>
+
+{{ dependents }}
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<br>
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Financial Highlights
+
+</h4>
+
+<div class="row">
+
+<div class="col-6">
+
+<div class="info-card">
+
+<h5>
+
+Risk Profile
+
+</h5>
+
+<h3>
+
+{{ risk_profile }}
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="col-6">
+
+<div class="info-card">
+
+<h5>
+
+Goal Achievement
+
+</h5>
+
+<h3>
+
+{{ goal_achievement }}%
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="col-6 mt-4">
+
+<div class="info-card">
+
+<h5>
+
+Retirement Readiness
+
+</h5>
+
+<h3>
+
+{{ readiness }}%
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="col-6 mt-4">
+
+<div class="info-card">
+
+<h5>
+
+Financial Stability
+
+</h5>
+
+<h3>
+
+{{ financial_stability }}/100
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+Anand Rathi Preferred | Wealth GPS Report
+
+</div>
+
+</section>
+
+<div class="page-break"></div>
+
+<!-- ===================================================== -->
+<!-- FAMILY INFORMATION -->
+<!-- ===================================================== -->
+
+<section class="page">
+
+<div class="page-header">
+
+<h2>
+
+Family Information
+
+</h2>
+
+<p>
+
+Understanding the client's family structure enables more effective financial planning, succession planning, insurance planning and future goal allocation.
+
+</p>
+
+</div>
+
+<div class="family-summary">
+
+<div class="family-card">
+
+<h4>
+
+Total Family Members
+
+</h4>
+
+<h2>
+
+{{ family_count }}
+
+</h2>
+
+</div>
+
+</div>
+
+{% if family_members %}
+
+<table class="professional-table">
+
+<thead>
+
+<tr>
+
+<th>
+
+Member Name
+
+</th>
+
+<th>
+
+Relationship
+
+</th>
+
+<th>
+
+Age
+
+</th>
+
+<th>
+
+Occupation
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for member in family_members %}
+
+<tr>
+
+<td>
+
+{{ member.name }}
+
+</td>
+
+<td>
+
+{{ member.relation }}
+
+</td>
+
+<td>
+
+{{ member.age if member.age else "-" }}
+
+</td>
+
+<td>
+
+{{ member.occupation if member.occupation else "-" }}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% else %}
+
+<div class="alert alert-warning">
+
+No family member information was provided.
+
+</div>
+
+{% endif %}
+
+<br>
+
+<div class="advisor-note">
+
+<h4>
+
+Why Family Information Matters
+
+</h4>
+
+<p>
+
+Family information plays a significant role in long-term financial planning. It helps determine future financial responsibilities, insurance requirements, education planning, retirement planning, estate planning and wealth transfer strategies.
+
+</p>
+
+</div>
+
+<div class="footer">
+
+Anand Rathi Preferred | Wealth GPS Report
+
+</div>
+
+</section>
+
+<div class="page-break"></div>
+<!-- ===================================================== -->
+<!-- FINANCIAL PROFILE -->
+<!-- ===================================================== -->
+
+<section class="page">
+
+<div class="page-header">
+
+<h2>
+
+Financial Profile
+
+</h2>
+
+<p>
+
+The following table represents the client's current investment holdings as disclosed during the Wealth GPS assessment. Only investments provided by the client are included.
+
+</p>
+
+</div>
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Current Investment Portfolio
+
+</h4>
+
+<table class="professional-table">
+
+<thead>
+
+<tr>
+
+<th width="70%">
+
+Investment Category
+
+</th>
+
+<th width="30%">
+
+Current Value (₹)
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% if direct_equity > 0 %}
+<tr>
+<td>Direct Equity</td>
+<td>₹ {{ "{:,.0f}".format(direct_equity) }}</td>
+</tr>
+{% endif %}
+
+{% if mutual_funds > 0 %}
+<tr>
+<td>Mutual Funds</td>
+<td>₹ {{ "{:,.0f}".format(mutual_funds) }}</td>
+</tr>
+{% endif %}
+
+{% if fd > 0 %}
+<tr>
+<td>Fixed Deposits (FD)</td>
+<td>₹ {{ "{:,.0f}".format(fd) }}</td>
+</tr>
+{% endif %}
+
+{% if ppf > 0 %}
+<tr>
+<td>Public Provident Fund (PPF)</td>
+<td>₹ {{ "{:,.0f}".format(ppf) }}</td>
+</tr>
+{% endif %}
+
+{% if epf > 0 %}
+<tr>
+<td>Employees' Provident Fund (EPF)</td>
+<td>₹ {{ "{:,.0f}".format(epf) }}</td>
+</tr>
+{% endif %}
+
+{% if nps > 0 %}
+<tr>
+<td>National Pension System (NPS)</td>
+<td>₹ {{ "{:,.0f}".format(nps) }}</td>
+</tr>
+{% endif %}
+
+{% if bonds > 0 %}
+<tr>
+<td>Bonds / NCDs / Debentures</td>
+<td>₹ {{ "{:,.0f}".format(bonds) }}</td>
+</tr>
+{% endif %}
+
+{% if gold > 0 %}
+<tr>
+<td>Gold / Silver / Commodities</td>
+<td>₹ {{ "{:,.0f}".format(gold) }}</td>
+</tr>
+{% endif %}
+
+{% if real_estate > 0 %}
+<tr>
+<td>Real Estate (Investment Only)</td>
+<td>₹ {{ "{:,.0f}".format(real_estate) }}</td>
+</tr>
+{% endif %}
+
+{% if insurance > 0 %}
+<tr>
+<td>Insurance / ULIPs / Endowment</td>
+<td>₹ {{ "{:,.0f}".format(insurance) }}</td>
+</tr>
+{% endif %}
+
+{% if alternate > 0 %}
+<tr>
+<td>Alternate Investments (AIF / PMS)</td>
+<td>₹ {{ "{:,.0f}".format(alternate) }}</td>
+</tr>
+{% endif %}
+
+{% if cash > 0 %}
+<tr>
+<td>Cash / Savings / Liquid Assets</td>
+<td>₹ {{ "{:,.0f}".format(cash) }}</td>
+</tr>
+{% endif %}
+
+<tr class="total-row">
+
+<td>
+
+<strong>
+
+TOTAL INVESTMENT VALUE
+
+</strong>
+
+</td>
+
+<td>
+
+<strong>
+
+₹ {{ "{:,.0f}".format(
+
+direct_equity
++ mutual_funds
++ fd
++ ppf
++ epf
++ nps
++ bonds
++ gold
++ real_estate
++ insurance
++ alternate
++ cash
+
+) }}
+
+</strong>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<br>
+
+<!-- ===================================================== -->
+<!-- DOCUMENTS -->
+<!-- ===================================================== -->
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Supporting Documents
+
+</h4>
+
+<table class="professional-table">
+
+<tr>
+
+<th>
+
+Document
+
+</th>
+
+<th>
+
+Status
+
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+Consolidated Account Statement (CAS)
+
+</td>
+
+<td>
+
+{% if cas_uploaded %}
+
+Uploaded
+
+{% else %}
+
+Not Submitted
+
+{% endif %}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+CAMS / KFintech Statement
+
+</td>
+
+<td>
+
+{% if cams_uploaded %}
+
+Uploaded
+
+{% else %}
+
+Not Submitted
+
+{% endif %}
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<br>
+
+<!-- ===================================================== -->
+<!-- PORTFOLIO ALLOCATION -->
+<!-- ===================================================== -->
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Portfolio Allocation
+
+</h4>
+
+<div class="text-center">
+
+<img
+
+src="{{ allocation_chart }}"
+
+class="chart-image"
+
+>
+
+</div>
+
+<br>
+
+<table class="professional-table">
+
+<tr>
+
+<th>
+
+Asset Class
+
+</th>
+
+<th>
+
+Allocation
+
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+Equity
+
+</td>
+
+<td>
+
+{{ equity_pct }}%
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Debt
+
+</td>
+
+<td>
+
+{{ debt_pct }}%
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Gold
+
+</td>
+
+<td>
+
+{{ gold_pct }}%
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Cash
+
+</td>
+
+<td>
+
+{{ cash_pct }}%
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="footer">
+
+Anand Rathi Preferred | Wealth GPS Report
+
+</div>
+
+</section>
+
+<div class="page-break"></div>
+<!-- ===================================================== -->
+<!-- FINANCIAL GOALS -->
+<!-- ===================================================== -->
+
+<section class="page">
+
+<div class="page-header">
+
+<h2>
+
+Financial Goals & Retirement Planning
+
+</h2>
+
+<p>
+
+The following section summarizes the client's declared financial goals and evaluates the current progress toward achieving them.
+
+</p>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- GOAL SUMMARY -->
+<!-- ===================================================== -->
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Financial Goal Summary
+
+</h4>
+
+<table class="professional-table">
+
+<thead>
+
+<tr>
+
+<th>
+
+Goal
+
+</th>
+
+<th>
+
+Target Year
+
+</th>
+
+<th>
+
+Target Corpus
+
+</th>
+
+<th>
+
+Achievement
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% if goal1_name %}
+
+<tr>
+
+<td>{{ goal1_name }}</td>
+
+<td>{{ goal1_year }}</td>
+
+<td>₹ {{ goal1_corpus }}</td>
+
+<td>{{ goal1_achievement }}%</td>
+
+</tr>
+
+{% endif %}
+
+{% if goal2_name %}
+
+<tr>
+
+<td>{{ goal2_name }}</td>
+
+<td>{{ goal2_year }}</td>
+
+<td>₹ {{ goal2_corpus }}</td>
+
+<td>{{ goal2_achievement }}%</td>
+
+</tr>
+
+{% endif %}
+
+{% if goal3_name %}
+
+<tr>
+
+<td>{{ goal3_name }}</td>
+
+<td>{{ goal3_year }}</td>
+
+<td>₹ {{ goal3_corpus }}</td>
+
+<td>{{ goal3_achievement }}%</td>
+
+</tr>
+
+{% endif %}
+
+</tbody>
+
+</table>
+
+</div>
+
+<br>
+
+<!-- ===================================================== -->
+<!-- GOAL PROGRESS -->
+<!-- ===================================================== -->
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Goal Progress Overview
+
+</h4>
+
+<div class="text-center">
+
+<img
+
+src="{{ goal_chart }}"
+
+class="chart-image"
+
+>
+
+</div>
+
+<p class="text-center mt-3">
+
+Overall Goal Achievement
+
+</p>
+
+<h2 class="text-center text-maroon">
+
+{{ goal_achievement }}%
+
+</h2>
+
+</div>
+
+<br>
+
+<!-- ===================================================== -->
+<!-- RETIREMENT PLANNING -->
+<!-- ===================================================== -->
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Retirement Planning Analysis
+
+</h4>
+
+<table class="professional-table">
+
+<tr>
+
+<th width="50%">
+
+Parameter
+
+</th>
+
+<th>
+
+Value
+
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+Current Age
+
+</td>
+
+<td>
+
+{{ age }} Years
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Retirement Age
+
+</td>
+
+<td>
+
+{{ retirement_age }} Years
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Years Remaining
+
+</td>
+
+<td>
+
+{{ years }} Years
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Estimated Retirement Corpus
+
+</td>
+
+<td>
+
+₹ {{ corpus }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Retirement Readiness
+
+</td>
+
+<td>
+
+{{ readiness }}%
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<br>
+
+<!-- ===================================================== -->
+<!-- PROFESSIONAL INTERPRETATION -->
+<!-- ===================================================== -->
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Retirement Interpretation
+
+</h4>
+
+<p>
+
+Your projected retirement corpus based on the information shared is
+
+<strong>
+
+₹ {{ corpus }}
+
+</strong>.
+
+Your present retirement readiness stands at
+
+<strong>
+
+{{ readiness }}%.
+
+</strong>
+
+A higher readiness percentage indicates stronger preparedness for future financial independence.
+
+Regular investments, disciplined SIP contributions, periodic portfolio reviews, and maintaining a diversified asset allocation can significantly improve retirement preparedness over time.
+
+</p>
+
+</div>
+
+<br>
+
+<!-- ===================================================== -->
+<!-- KEY OBSERVATIONS -->
+<!-- ===================================================== -->
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Key Financial Observations
+
+</h4>
+
+<ul class="professional-list">
+
+<li>
+
+Current Risk Profile:
+
+<strong>
+
+{{ risk_profile }}
+
+</strong>
+
+</li>
+
+<li>
+
+Financial Stability Score:
+
+<strong>
+
+{{ financial_stability }}/100
+
+</strong>
+
+</li>
+
+<li>
+
+Overall Goal Achievement:
+
+<strong>
+
+{{ goal_achievement }}%
+
+</strong>
+
+</li>
+
+<li>
+
+Retirement Readiness:
+
+<strong>
+
+{{ readiness }}%
+
+</strong>
+
+</li>
+
+<li>
+
+Regular portfolio reviews are recommended to maintain an appropriate asset allocation and align investments with evolving financial objectives.
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="footer">
+
+Anand Rathi Preferred | Wealth GPS Report
+
+</div>
+
+</section>
+
+<div class="page-break"></div>
+<!-- ===================================================== -->
+<!-- ADVISOR RECOMMENDATIONS -->
+<!-- ===================================================== -->
+
+<section class="page">
+
+<div class="page-header">
+
+<h2>
+
+Advisor Recommendations
+
+</h2>
+
+<p>
+
+The following recommendations are based on the information voluntarily shared by the client during the Wealth GPS assessment. These recommendations are indicative in nature and should be reviewed with an Anand Rathi Preferred Relationship Manager before implementation.
+
+</p>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- KEY RECOMMENDATIONS -->
+<!-- ===================================================== -->
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Recommended Next Steps
+
+</h4>
+
+<table class="professional-table">
+
+<thead>
+
+<tr>
+
+<th width="35%">
+
+Area
+
+</th>
+
+<th>
+
+Recommendation
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+
+Portfolio Review
+
+</td>
+
+<td>
+
+Conduct a comprehensive portfolio review to identify concentration risks and optimize overall asset allocation.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Asset Allocation
+
+</td>
+
+<td>
+
+Maintain an appropriate balance between Equity, Debt, Gold and Liquid assets according to long-term financial objectives.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Goal Planning
+
+</td>
+
+<td>
+
+Review all financial goals annually and update investment requirements as income and lifestyle evolve.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Retirement Planning
+
+</td>
+
+<td>
+
+Increase retirement-focused investments gradually to improve long-term retirement readiness.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Risk Management
+
+</td>
+
+<td>
+
+Ensure adequate insurance coverage and maintain sufficient emergency liquidity before increasing investment exposure.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Periodic Review
+
+</td>
+
+<td>
+
+Schedule a financial review every six to twelve months to monitor portfolio performance and rebalance investments where necessary.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<br>
+
+<!-- ===================================================== -->
+<!-- MEETING SUMMARY -->
+<!-- ===================================================== -->
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Meeting Summary
+
+</h4>
+
+<table class="professional-table">
+
+<tr>
+
+<th width="35%">
+
+Client
+
+</th>
+
+<td>
+
+{{ name }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+
+Relationship Manager
+
+</th>
+
+<td>
+
+Anand Rathi Preferred
+
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+
+Risk Profile
+
+</th>
+
+<td>
+
+{{ risk_profile }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+
+Financial Stability
+
+</th>
+
+<td>
+
+{{ financial_stability }}/100
+
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+
+Retirement Readiness
+
+</th>
+
+<td>
+
+{{ readiness }}%
+
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+
+Overall Goal Achievement
+
+</th>
+
+<td>
+
+{{ goal_achievement }}%
+
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+
+Report Date
+
+</th>
+
+<td>
+
+{{ report_date }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+
+Report ID
+
+</th>
+
+<td>
+
+{{ report_id }}
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<br>
+
+<!-- ===================================================== -->
+<!-- ADVISOR REMARK -->
+<!-- ===================================================== -->
+
+<div class="section-box">
+
+<h4 class="section-title">
+
+Advisor Remarks
+
+</h4>
+
+<div class="remarks-box">
+
+{% if advisor_comment %}
+
+{{ advisor_comment }}
+
+{% else %}
+
+This report is intended to initiate meaningful financial discussions and assist in identifying suitable investment strategies. Final investment decisions should be made only after a detailed consultation with an Anand Rathi Preferred Relationship Manager.
+
+{% endif %}
+
+</div>
+
+</div>
+
+<br>
+
+<!-- ===================================================== -->
+<!-- DISCLAIMER -->
+<!-- ===================================================== -->
+
+<div class="section-box disclaimer">
+
+<h4>
+
+Important Disclaimer
+
+</h4>
+
+<ul>
+
+<li>
+
+This report has been generated based solely on the information voluntarily provided by the client during the Wealth GPS assessment.
+
+</li>
+
+<li>
+
+The calculations, projections and illustrations contained in this report are indicative in nature and should not be interpreted as guaranteed returns or investment advice.
+
+</li>
+
+<li>
+
+Investment in securities, mutual funds and market-linked instruments are subject to market risks. Please read all scheme related documents carefully before investing.
+
+</li>
+
+<li>
+
+Past performance is not indicative of future results.
+
+</li>
+
+<li>
+
+Actual investment performance may differ depending upon market conditions, taxation, inflation, liquidity and future investment behaviour.
+
+</li>
+
+<li>
+
+Clients are advised to consult their Relationship Manager before making any investment decisions.
+
+</li>
+
+</ul>
+
+</div>
+
+<br>
+
+<!-- ===================================================== -->
+<!-- SIGNATURE -->
+<!-- ===================================================== -->
+
+<div class="signature-section">
+
+<div class="signature-box">
+
+<p>
+
+______________________________
+
+</p>
+
+<strong>
+
+Relationship Manager
+
+</strong>
+
+<br>
+
+Anand Rathi Preferred
+
+</div>
+
+<div class="signature-box">
+
+<p>
+
+______________________________
+
+</p>
+
+<strong>
+
+Client Signature
+
+</strong>
+
+<br>
+
+{{ name }}
+
+</div>
+
+</div>
+
+<div class="thank-you">
+
+<h3>
+
+Thank You
+
+</h3>
+
+<p>
+
+Thank you for choosing Anand Rathi Preferred.
+
+We appreciate the opportunity to be a part of your financial journey and remain committed to helping you achieve your long-term wealth creation goals.
+
+</p>
+
+</div>
+
+<div class="footer">
+
+© {{ report_date[-4:] }} Anand Rathi Preferred
+
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+Confidential Wealth GPS Report
+
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+Page 6
+
+</div>
+
+</section>
+
+</body>
+
+</html>

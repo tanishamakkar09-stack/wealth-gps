@@ -1,0 +1,1539 @@
+/* ===================================================== */
+/* GLOBAL STYLES */
+/* ===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    color:#333333;
+
+    background:#ffffff;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+/* ===================================================== */
+/* PAGE */
+/* ===================================================== */
+
+.page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:35px 45px;
+
+    position:relative;
+
+}
+
+.page-break{
+
+    page-break-after:always;
+
+}
+
+/* ===================================================== */
+/* COVER PAGE */
+/* ===================================================== */
+
+.cover-page{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+}
+
+.cover-overlay{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.cover-content{
+
+    width:82%;
+
+    text-align:center;
+
+}
+
+.company{
+
+    font-size:18px;
+
+    letter-spacing:4px;
+
+    color:#8B1E2D;
+
+    font-weight:bold;
+
+}
+
+.main-title{
+
+    font-size:54px;
+
+    color:#8B1E2D;
+
+    margin-top:25px;
+
+    font-weight:700;
+
+}
+
+.sub-title{
+
+    font-size:20px;
+
+    margin-top:15px;
+
+    color:#C8A24A;
+
+    letter-spacing:2px;
+
+    font-weight:500;
+
+}
+
+.gold-line{
+
+    width:220px;
+
+    height:5px;
+
+    background:#C8A24A;
+
+    margin:35px auto;
+
+    border-radius:10px;
+
+}
+
+/* ===================================================== */
+/* CLIENT NAME */
+/* ===================================================== */
+
+.prepared-for{
+
+    margin:40px 0;
+
+}
+
+.prepared-for p{
+
+    color:#777;
+
+    font-size:16px;
+
+    margin-bottom:12px;
+
+}
+
+.prepared-for h1{
+
+    font-size:36px;
+
+    color:#8B1E2D;
+
+    font-weight:700;
+
+}
+
+/* ===================================================== */
+/* COVER TABLE */
+/* ===================================================== */
+
+.cover-table{
+
+    width:78%;
+
+    margin:auto;
+
+    border-collapse:collapse;
+
+    margin-top:40px;
+
+}
+
+.cover-table td{
+
+    border:1px solid #D9D9D9;
+
+    padding:14px 18px;
+
+    font-size:14px;
+
+}
+
+.cover-table td:first-child{
+
+    background:#F8F5F0;
+
+    width:42%;
+
+    font-weight:600;
+
+    color:#8B1E2D;
+
+}
+
+/* ===================================================== */
+/* CONFIDENTIAL */
+/* ===================================================== */
+
+.confidential-box{
+
+    margin-top:45px;
+
+    background:#FFF8E8;
+
+    border-left:6px solid #C8A24A;
+
+    padding:18px;
+
+    color:#555;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+}
+
+/* ===================================================== */
+/* HEADER */
+/* ===================================================== */
+
+.page-header{
+
+    margin-bottom:35px;
+
+    border-bottom:3px solid #C8A24A;
+
+    padding-bottom:15px;
+
+}
+
+.page-header h2{
+
+    color:#8B1E2D;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.page-header p{
+
+    color:#666;
+
+    font-size:14px;
+
+}
+/* ===================================================== */
+/* EXECUTIVE SUMMARY GRID */
+/* ===================================================== */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+/* ===================================================== */
+/* KPI CARDS */
+/* ===================================================== */
+
+.summary-card{
+
+    background:#ffffff;
+
+    border:1px solid #E5E5E5;
+
+    border-top:5px solid #C8A24A;
+
+    border-radius:14px;
+
+    padding:24px;
+
+    text-align:center;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+
+    transition:.3s;
+
+}
+
+.summary-card h5{
+
+    color:#777;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.summary-card h2{
+
+    color:#8B1E2D;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.summary-card p{
+
+    color:#666;
+
+    font-size:13px;
+
+    margin:0;
+
+}
+
+/* ===================================================== */
+/* EXECUTIVE INTERPRETATION */
+/* ===================================================== */
+
+.executive-box{
+
+    margin-top:10px;
+
+    background:#FFFDF8;
+
+    border-left:6px solid #C8A24A;
+
+    border-radius:10px;
+
+    padding:28px;
+
+}
+
+.executive-box h4{
+
+    color:#8B1E2D;
+
+    font-size:20px;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+}
+
+.executive-box p{
+
+    text-align:justify;
+
+    font-size:14px;
+
+    color:#444;
+
+    line-height:1.9;
+
+}
+
+.executive-box strong{
+
+    color:#8B1E2D;
+
+}
+
+/* ===================================================== */
+/* GENERIC SECTION BOX */
+/* ===================================================== */
+
+.section-box{
+
+    background:#ffffff;
+
+    border:1px solid #E7E7E7;
+
+    border-radius:14px;
+
+    padding:28px;
+
+    margin-bottom:28px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,0.05);
+
+}
+
+/* ===================================================== */
+/* SECTION TITLES */
+/* ===================================================== */
+
+.section-title{
+
+    color:#8B1E2D;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:22px;
+
+    padding-bottom:10px;
+
+    border-bottom:2px solid #C8A24A;
+
+}
+
+/* ===================================================== */
+/* INFORMATION CARDS */
+/* ===================================================== */
+
+.info-card{
+
+    background:#FAFAFA;
+
+    border:1px solid #ECECEC;
+
+    border-radius:12px;
+
+    padding:22px;
+
+    text-align:center;
+
+    height:100%;
+
+}
+
+.info-card h5{
+
+    color:#777;
+
+    font-size:14px;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.info-card h3{
+
+    color:#8B1E2D;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+/* ===================================================== */
+/* FAMILY SUMMARY */
+/* ===================================================== */
+
+.family-summary{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:30px;
+
+}
+
+.family-card{
+
+    width:260px;
+
+    background:#FFFDF8;
+
+    border:2px solid #C8A24A;
+
+    border-radius:16px;
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+.family-card h4{
+
+    color:#666;
+
+    font-size:16px;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.family-card h2{
+
+    color:#8B1E2D;
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+/* ===================================================== */
+/* ADVISOR NOTE */
+/* ===================================================== */
+
+.advisor-note{
+
+    background:#FFF8E8;
+
+    border-left:6px solid #C8A24A;
+
+    padding:25px;
+
+    border-radius:10px;
+
+}
+
+.advisor-note h4{
+
+    color:#8B1E2D;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.advisor-note p{
+
+    color:#444;
+
+    text-align:justify;
+
+    line-height:1.8;
+
+    margin:0;
+
+}
+/* ===================================================== */
+/* EXECUTIVE SUMMARY GRID */
+/* ===================================================== */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+/* ===================================================== */
+/* KPI CARDS */
+/* ===================================================== */
+
+.summary-card{
+
+    background:#ffffff;
+
+    border:1px solid #E5E5E5;
+
+    border-top:5px solid #C8A24A;
+
+    border-radius:14px;
+
+    padding:24px;
+
+    text-align:center;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+
+    transition:.3s;
+
+}
+
+.summary-card h5{
+
+    color:#777;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.summary-card h2{
+
+    color:#8B1E2D;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.summary-card p{
+
+    color:#666;
+
+    font-size:13px;
+
+    margin:0;
+
+}
+
+/* ===================================================== */
+/* EXECUTIVE INTERPRETATION */
+/* ===================================================== */
+
+.executive-box{
+
+    margin-top:10px;
+
+    background:#FFFDF8;
+
+    border-left:6px solid #C8A24A;
+
+    border-radius:10px;
+
+    padding:28px;
+
+}
+
+.executive-box h4{
+
+    color:#8B1E2D;
+
+    font-size:20px;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+}
+
+.executive-box p{
+
+    text-align:justify;
+
+    font-size:14px;
+
+    color:#444;
+
+    line-height:1.9;
+
+}
+
+.executive-box strong{
+
+    color:#8B1E2D;
+
+}
+
+/* ===================================================== */
+/* GENERIC SECTION BOX */
+/* ===================================================== */
+
+.section-box{
+
+    background:#ffffff;
+
+    border:1px solid #E7E7E7;
+
+    border-radius:14px;
+
+    padding:28px;
+
+    margin-bottom:28px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,0.05);
+
+}
+
+/* ===================================================== */
+/* SECTION TITLES */
+/* ===================================================== */
+
+.section-title{
+
+    color:#8B1E2D;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:22px;
+
+    padding-bottom:10px;
+
+    border-bottom:2px solid #C8A24A;
+
+}
+
+/* ===================================================== */
+/* INFORMATION CARDS */
+/* ===================================================== */
+
+.info-card{
+
+    background:#FAFAFA;
+
+    border:1px solid #ECECEC;
+
+    border-radius:12px;
+
+    padding:22px;
+
+    text-align:center;
+
+    height:100%;
+
+}
+
+.info-card h5{
+
+    color:#777;
+
+    font-size:14px;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.info-card h3{
+
+    color:#8B1E2D;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+/* ===================================================== */
+/* FAMILY SUMMARY */
+/* ===================================================== */
+
+.family-summary{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:30px;
+
+}
+
+.family-card{
+
+    width:260px;
+
+    background:#FFFDF8;
+
+    border:2px solid #C8A24A;
+
+    border-radius:16px;
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+.family-card h4{
+
+    color:#666;
+
+    font-size:16px;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.family-card h2{
+
+    color:#8B1E2D;
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+/* ===================================================== */
+/* ADVISOR NOTE */
+/* ===================================================== */
+
+.advisor-note{
+
+    background:#FFF8E8;
+
+    border-left:6px solid #C8A24A;
+
+    padding:25px;
+
+    border-radius:10px;
+
+}
+
+.advisor-note h4{
+
+    color:#8B1E2D;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.advisor-note p{
+
+    color:#444;
+
+    text-align:justify;
+
+    line-height:1.8;
+
+    margin:0;
+
+}
+/* ===================================================== */
+/* ADVISOR RECOMMENDATION */
+/* ===================================================== */
+
+.recommendation-box{
+
+    background:#FFFDF8;
+
+    border-left:6px solid #C8A24A;
+
+    border-radius:12px;
+
+    padding:28px;
+
+    margin-top:20px;
+
+    margin-bottom:25px;
+
+}
+
+.recommendation-box h4{
+
+    color:#8B1E2D;
+
+    font-size:22px;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+}
+
+.recommendation-box p{
+
+    text-align:justify;
+
+    line-height:1.9;
+
+    color:#444;
+
+}
+
+/* ===================================================== */
+/* ADVISOR REMARKS */
+/* ===================================================== */
+
+.remarks-box{
+
+    background:#FAFAFA;
+
+    border:1px solid #E5E5E5;
+
+    border-radius:10px;
+
+    min-height:130px;
+
+    padding:20px;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:#444;
+
+}
+
+/* ===================================================== */
+/* MEETING SUMMARY */
+/* ===================================================== */
+
+.meeting-box{
+
+    background:#ffffff;
+
+    border:1px solid #E5E5E5;
+
+    border-radius:14px;
+
+    padding:25px;
+
+    margin-top:20px;
+
+    margin-bottom:30px;
+
+}
+
+.meeting-box h4{
+
+    color:#8B1E2D;
+
+    font-size:22px;
+
+    margin-bottom:18px;
+
+}
+
+/* ===================================================== */
+/* DISCLAIMER */
+/* ===================================================== */
+
+.disclaimer{
+
+    background:#FFF8E8;
+
+    border:2px solid #C8A24A;
+
+    border-radius:12px;
+
+    padding:25px;
+
+}
+
+.disclaimer h4{
+
+    color:#8B1E2D;
+
+    font-size:22px;
+
+    margin-bottom:18px;
+
+}
+
+.disclaimer ul{
+
+    padding-left:22px;
+
+    margin:0;
+
+}
+
+.disclaimer li{
+
+    margin-bottom:12px;
+
+    line-height:1.8;
+
+    color:#444;
+
+}
+
+/* ===================================================== */
+/* SIGNATURE SECTION */
+/* ===================================================== */
+
+.signature-section{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+    margin-top:55px;
+
+}
+
+.signature-box{
+
+    width:46%;
+
+    text-align:center;
+
+}
+
+.signature-box p{
+
+    margin-bottom:12px;
+
+    color:#777;
+
+}
+
+.signature-box strong{
+
+    color:#8B1E2D;
+
+    font-size:15px;
+
+}
+
+/* ===================================================== */
+/* THANK YOU */
+/* ===================================================== */
+
+.thank-you{
+
+    margin-top:60px;
+
+    text-align:center;
+
+}
+
+.thank-you h3{
+
+    color:#8B1E2D;
+
+    font-size:30px;
+
+    margin-bottom:18px;
+
+}
+
+.thank-you p{
+
+    color:#555;
+
+    font-size:14px;
+
+    line-height:1.9;
+
+    width:80%;
+
+    margin:auto;
+
+}
+
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
+
+.footer{
+
+    position:absolute;
+
+    bottom:18px;
+
+    left:0;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#888;
+
+    font-size:11px;
+
+    border-top:1px solid #DDDDDD;
+
+    padding-top:8px;
+
+}
+
+/* ===================================================== */
+/* PAGE NUMBER */
+/* ===================================================== */
+
+.page-number{
+
+    position:absolute;
+
+    bottom:18px;
+
+    right:30px;
+
+    font-size:11px;
+
+    color:#888;
+
+}
+
+/* ===================================================== */
+/* PRINT */
+/* ===================================================== */
+
+@page{
+
+    size:A4;
+
+    margin:15mm;
+
+}
+
+@media print{
+
+body{
+
+    -webkit-print-color-adjust:exact;
+
+    print-color-adjust:exact;
+
+}
+
+.page{
+
+    page-break-after:always;
+
+}
+
+.page:last-child{
+
+    page-break-after:auto;
+
+}
+
+}
+
+/* ===================================================== */
+/* SMALL UTILITIES */
+/* ===================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.mt-10{
+
+    margin-top:10px;
+
+}
+
+.mt-20{
+
+    margin-top:20px;
+
+}
+
+.mt-30{
+
+    margin-top:30px;
+
+}
+
+.mt-40{
+
+    margin-top:40px;
+
+}
+
+.mb-10{
+
+    margin-bottom:10px;
+
+}
+
+.mb-20{
+
+    margin-bottom:20px;
+
+}
+
+.mb-30{
+
+    margin-bottom:30px;
+
+}
+
+.mb-40{
+
+    margin-bottom:40px;
+
+}
+
+.bold{
+
+    font-weight:700;
+
+}
+
+.maroon{
+
+    color:#8B1E2D;
+
+}
+
+.gold{
+
+    color:#C8A24A;
+
+}
+/* ===================================================== */
+/* PROFESSIONAL PDF POLISH */
+/* ===================================================== */
+
+/* Smooth spacing */
+
+p{
+
+    margin-bottom:14px;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+
+    margin:0;
+
+    padding:0;
+
+}
+
+/* Better paragraph readability */
+
+.section-box p,
+
+.executive-box p,
+
+.advisor-note p,
+
+.highlight-box p,
+
+.disclaimer li{
+
+    text-align:justify;
+
+    line-height:1.85;
+
+}
+
+/* Professional table spacing */
+
+.professional-table td{
+
+    line-height:1.7;
+
+}
+
+/* Slightly darker alternate rows */
+
+.professional-table tbody tr:nth-child(even){
+
+    background:#F7F7F7;
+
+}
+
+/* Hover doesn't matter in PDF */
+
+.professional-table tbody tr:hover{
+
+    background:inherit;
+
+}
+
+/* Better chart alignment */
+
+.chart-image{
+
+    display:block;
+
+    margin:20px auto;
+
+}
+
+/* Better KPI spacing */
+
+.summary-card{
+
+    min-height:155px;
+
+}
+
+.summary-card h2{
+
+    margin-top:12px;
+
+    margin-bottom:12px;
+
+}
+
+/* Financial Highlight Cards */
+
+.info-card{
+
+    min-height:120px;
+
+}
+
+/* Signature */
+
+.signature-section{
+
+    margin-top:70px;
+
+}
+
+.signature-box{
+
+    padding-top:20px;
+
+}
+
+.signature-box p{
+
+    letter-spacing:1px;
+
+}
+
+/* Footer */
+
+.footer{
+
+    font-size:10px;
+
+    color:#666;
+
+}
+
+/* Tables never split */
+
+.professional-table{
+
+    page-break-inside:avoid;
+
+}
+
+.section-box{
+
+    page-break-inside:avoid;
+
+}
+
+.summary-grid{
+
+    page-break-inside:avoid;
+
+}
+
+.signature-section{
+
+    page-break-inside:avoid;
+
+}
+
+/* Chart section */
+
+.chart-container{
+
+    page-break-inside:avoid;
+
+}
+
+/* Better list spacing */
+
+.professional-list li{
+
+    margin-bottom:10px;
+
+}
+
+/* Remove ugly outlines */
+
+img{
+
+    border:none;
+
+}
+
+/* Better page margins */
+
+.page{
+
+    padding-top:30px;
+
+    padding-bottom:50px;
+
+}
+
+/* Nice horizontal rule */
+
+hr{
+
+    border:none;
+
+    border-top:2px solid #C8A24A;
+
+    margin:25px 0;
+
+}
+
+/* Elegant page title */
+
+.page-header{
+
+    margin-bottom:30px;
+
+}
+
+.page-header h2{
+
+    letter-spacing:.4px;
+
+}
+
+/* Better family table */
+
+.family-card{
+
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+
+}
+
+/* Recommendation table */
+
+.professional-table th{
+
+    letter-spacing:.3px;
+
+}
+
+/* Make numbers align nicely */
+
+.professional-table td:last-child{
+
+    text-align:right;
+
+}
+
+/* But not all tables */
+
+.cover-table td:last-child,
+
+.cover-table td:first-child{
+
+    text-align:left;
+
+}
+
+/* Prevent headings from separating */
+
+h2,h3,h4{
+
+    page-break-after:avoid;
+
+}
+
+/* Keep chart with heading */
+
+.section-title{
+
+    page-break-after:avoid;
+
+}
+
+/* Avoid lonely rows */
+
+tr{
+
+    page-break-inside:avoid;
+
+}
+
+/* Final page */
+
+.thank-you{
+
+    margin-top:80px;
+
+}
+
+.thank-you h3{
+
+    letter-spacing:1px;
+
+}
+
+/* Small professional touch */
+
+.company{
+
+    text-transform:uppercase;
+
+}
+
+.main-title{
+
+    letter-spacing:2px;
+
+}
+
+.sub-title{
+
+    text-transform:uppercase;
+
+}

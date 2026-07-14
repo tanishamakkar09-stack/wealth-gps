@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Client Details
+
+</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='client_details.css') }}">
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>
+
+ANAND RATHI PREFERRED
+
+</h1>
+
+<p>
+
+Relationship Manager Portal
+
+</p>
+
+</div>
+
+<div class="container">
+
+<div class="top-bar">
+
+<h2>
+
+Client Profile
+
+</h2>
+
+<a href="/admin" class="back-btn">
+
+← Back to Dashboard
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Personal Information
+
+</h3>
+
+<div class="grid">
+
+<div>
+
+<label>Client Name</label>
+
+<p>{{ client["Client Name"] }}</p>
+
+</div>
+
+<div>
+
+<label>Mobile</label>
+
+<p>{{ client["Mobile"] }}</p>
+
+</div>
+
+<div>
+
+<label>Email</label>
+
+<p>{{ client["Email"] }}</p>
+
+</div>
+
+<div>
+
+<label>Occupation</label>
+
+<p>{{ client["Occupation"] }}</p>
+
+</div>
+
+<div>
+
+<label>Marital Status</label>
+
+<p>{{ client["Marital Status"] }}</p>
+
+</div>
+
+<div>
+
+<label>Annual Income</label>
+
+<p>₹ {{ client["Annual Income"] }}</p>
+
+</div>
+
+<div>
+
+<label>Monthly SIP</label>
+
+<p>₹ {{ client["Monthly SIP"] }}</p>
+
+</div>
+
+<div>
+
+<label>Family Members</label>
+
+<p>{{ client["Family Members"] }}</p>
+
+</div>
+
+</div>
+
+</div>
+<div class="card">
+
+<h3>
+
+Meeting Information
+
+</h3>
+
+<div class="grid">
+
+<div>
+
+<label>Meeting Date</label>
+
+<p>{{ client["Meeting Date"] }}</p>
+
+</div>
+
+<div>
+
+<label>Meeting Time</label>
+
+<p>{{ client["Meeting Time"] }}</p>
+
+</div>
+
+<div>
+
+<label>Meeting Mode</label>
+
+<p>{{ client["Meeting Mode"] }}</p>
+
+</div>
+
+<div>
+
+<label>Risk Profile</label>
+
+<p>{{ client["Risk Profile"] }}</p>
+
+</div>
+
+</div>
+
+</div>
+<div class="card">
+
+<h3>
+
+Financial Summary
+
+</h3>
+
+<div class="grid">
+
+<div>
+
+<label>Annual Income</label>
+
+<p>₹ {{ "{:,.0f}".format(client["Annual Income"]) }}</p>
+
+</div>
+
+<div>
+
+<label>Monthly SIP</label>
+
+<p>₹ {{ "{:,.0f}".format(client["Monthly SIP"]) }}</p>
+
+</div>
+
+<div>
+
+<label>Financial Stability</label>
+
+<p>{{ client["Financial Stability"] }}/100</p>
+
+</div>
+
+<div>
+
+<label>Retirement Readiness</label>
+
+<p>{{ client["Retirement Readiness"] }}%</p>
+
+</div>
+
+<div>
+
+<label>Goal Achievement</label>
+
+<p>{{ client["Goal Achievement"] }}%</p>
+
+</div>
+
+</div>
+
+</div>
+<div class="card">
+
+<h3>Uploaded Documents</h3>
+
+<table class="doc-table">
+
+<tr>
+
+<th>Document</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+<tr>
+
+<td>CAS Statement</td>
+
+<td>{{ client["CAS Uploaded"] }}</td>
+
+<td>
+
+{% if client["CAS Uploaded"]=="Yes" %}
+
+<a
+href="/view-document/cas/{{ client['CAS File'] }}"
+target="_blank"
+class="btn">
+
+View CAS
+
+</a>
+
+{% else %}
+
+<span style="color:#999;">Not Uploaded</span>
+
+{% endif %}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>CAMS Statement</td>
+
+<td>{{ client["CAMS Uploaded"] }}</td>
+
+<td>
+
+{% if client["CAMS Uploaded"]=="Yes" %}
+
+<a
+href="/view-document/cams/{{ client['CAMS File'] }}"
+target="_blank"
+class="btn">
+
+View CAMS
+
+</a>
+
+{% else %}
+
+<span style="color:#999;">Not Uploaded</span>
+
+{% endif %}
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<td>CAS Statement</td>
+
+<td>{{ client["CAS Uploaded"] }}</td>
+
+<td>
+
+{% if client["CAS Uploaded"]=="Yes" %}
+
+<button class="btn">
+
+View
+
+</button>
+
+{% else %}
+
+-
+
+{% endif %}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>CAMS Statement</td>
+
+<td>{{ client["CAMS Uploaded"] }}</td>
+
+<td>
+
+{% if client["CAMS Uploaded"]=="Yes" %}
+
+<button class="btn">
+
+View
+
+</button>
+
+{% else %}
+
+-
+
+{% endif %}
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="card">
+
+<h3>
+
+Advisor Actions
+
+</h3>
+
+<div style="display:flex;gap:15px;flex-wrap:wrap;">
+
+<button class="back-btn">
+
+Download PDF
+
+</button>
+
+<button class="back-btn">
+
+Mark Completed
+
+</button>
+
+<button class="back-btn">
+
+Reschedule
+
+</button>
+
+</div>
+
+</div>
+

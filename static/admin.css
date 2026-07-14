@@ -1,0 +1,431 @@
+/* ===================================================== */
+/* GLOBAL */
+/* ===================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Segoe UI',sans-serif;
+
+    background:#F6F4F1;
+
+    color:#333;
+
+}
+
+/* ===================================================== */
+/* HEADER */
+/* ===================================================== */
+
+.header{
+
+    background:#8B1E2D;
+
+    color:white;
+
+    padding:28px 60px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.header h1{
+
+    font-size:32px;
+
+    letter-spacing:1px;
+
+    font-weight:700;
+
+}
+
+.header p{
+
+    margin-top:8px;
+
+    font-size:15px;
+
+    opacity:.9;
+
+}
+
+/* ===================================================== */
+/* MAIN CONTAINER */
+/* ===================================================== */
+
+.container{
+
+    width:92%;
+
+    margin:40px auto;
+
+}
+
+/* ===================================================== */
+/* KPI CARDS */
+/* ===================================================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:28px;
+
+    border-top:5px solid #C8A24A;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+
+}
+
+.card h3{
+
+    color:#666;
+
+    font-size:16px;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.card h1{
+
+    color:#8B1E2D;
+
+    font-size:40px;
+
+    font-weight:700;
+
+}
+
+/* ===================================================== */
+/* SEARCH BAR */
+/* ===================================================== */
+
+.search-box{
+
+    margin-bottom:25px;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:16px 22px;
+
+    border-radius:14px;
+
+    border:1px solid #D8D8D8;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.search-box input:focus{
+
+    border-color:#8B1E2D;
+
+    box-shadow:0 0 0 3px rgba(139,30,45,.12);
+
+}
+
+/* ===================================================== */
+/* TABLE */
+/* ===================================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+thead{
+
+    background:#8B1E2D;
+
+    color:white;
+
+}
+th{
+
+    padding:18px;
+
+    text-align:left;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:.3px;
+
+}
+
+td{
+
+    padding:16px 18px;
+
+    border-bottom:1px solid #EEEEEE;
+
+    font-size:14px;
+
+}
+
+tbody tr{
+
+    transition:.25s;
+
+}
+
+tbody tr:hover{
+
+    background:#FFF8E8;
+
+}
+
+/* ===================================================== */
+/* STATUS */
+/* ===================================================== */
+
+.status{
+
+    display:inline-block;
+
+    padding:7px 14px;
+
+    border-radius:20px;
+
+    background:#FFF3CD;
+
+    color:#856404;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.status.completed{
+
+    background:#D1E7DD;
+
+    color:#0F5132;
+
+}
+
+.status.cancelled{
+
+    background:#F8D7DA;
+
+    color:#842029;
+
+}
+
+.status.confirmed{
+
+    background:#CFE2FF;
+
+    color:#084298;
+
+}
+
+/* ===================================================== */
+/* BUTTONS */
+/* ===================================================== */
+
+.btn{
+
+    background:#8B1E2D;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 16px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-right:8px;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#6B1020;
+
+}
+
+.btn-secondary{
+
+    background:#C8A24A;
+
+}
+
+.btn-secondary:hover{
+
+    background:#AF8A36;
+
+}
+
+/* ===================================================== */
+/* EMPTY STATE */
+/* ===================================================== */
+
+.empty{
+
+    text-align:center;
+
+    padding:50px;
+
+    color:#888;
+
+    font-size:18px;
+
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media(max-width:1200px){
+
+.cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+
+width:96%;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.header{
+
+padding:20px;
+
+}
+
+.header h1{
+
+font-size:24px;
+
+}
+
+table{
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+.search-box input{
+
+font-size:14px;
+
+}
+
+.btn{
+
+margin-bottom:6px;
+
+}
+
+}
+/* ===================================================== */
+/* STATUS DROPDOWN */
+/* ===================================================== */
+
+.status-dropdown{
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    border:1px solid #C8A24A;
+
+    background:white;
+
+    color:#8B1E2D;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.status-dropdown:focus{
+
+    outline:none;
+
+    border-color:#8B1E2D;
+
+}

@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Portfolio Review Dashboard
+
+</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+body{
+
+background:#F7F5F0;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+.dashboard-container{
+
+max-width:1450px;
+
+margin:auto;
+
+padding:40px;
+
+}
+
+.header{
+
+text-align:center;
+
+margin-bottom:45px;
+
+}
+
+.header h1{
+
+color:#8B1E2D;
+
+font-weight:700;
+
+font-size:48px;
+
+}
+
+.header p{
+
+color:#666;
+
+font-size:18px;
+
+margin-top:12px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+margin-bottom:50px;
+
+}
+
+.metric-card{
+
+background:white;
+
+border-radius:18px;
+
+padding:30px;
+
+text-align:center;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+border-top:6px solid #C8A24A;
+
+transition:.3s;
+
+}
+
+.metric-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.metric-card h5{
+
+font-size:18px;
+
+color:#444;
+
+margin-bottom:20px;
+
+font-weight:600;
+
+}
+
+.metric-card h2{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#8B1E2D;
+
+    margin-bottom:10px;
+
+    line-height:1.2;
+
+}
+
+.metric-card p{
+
+font-size:15px;
+
+color:#777;
+
+margin:0;
+
+}
+
+.section{
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+}
+
+.section-title{
+
+font-size:30px;
+
+font-weight:700;
+
+color:#8B1E2D;
+
+margin-bottom:25px;
+
+padding-bottom:12px;
+
+border-bottom:3px solid #C8A24A;
+
+}
+
+.info-table{
+
+width:100%;
+
+}
+
+.info-table td{
+
+padding:14px;
+
+border-bottom:1px solid #ECECEC;
+
+font-size:16px;
+
+}
+
+.info-table td:first-child{
+
+font-weight:600;
+
+width:35%;
+
+color:#333;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<div class="header">
+
+<h1>
+
+Portfolio Review Dashboard
+
+</h1>
+
+<p>
+
+Your personalized financial analysis and investment review.
+
+</p>
+
+</div>
+
+<div class="cards">
+    <div class="metric-card">
+
+    <h5>
+
+        Retirement Readiness
+
+    </h5>
+
+    <h2>
+
+        {{ readiness }}%
+
+    </h2>
+
+    <p>
+
+        Future Retirement Preparedness
+
+    </p>
+
+</div>
+
+
+<div class="metric-card">
+
+    <h5>
+
+        Financial Stability
+
+    </h5>
+
+    <h2>
+
+        {{ financial_stability }}/100
+
+    </h2>
+
+    <p>
+
+        Overall Financial Stability
+
+    </p>
+
+</div>
+
+
+<div class="metric-card">
+
+    <h5>
+
+        Risk Profile
+
+    </h5>
+
+    <h2>
+
+        {{ risk_profile }}
+
+    </h2>
+
+    <p>
+
+        Investment Behaviour
+
+    </p>
+
+</div>
+
+
+<div class="metric-card">
+
+    <h5>
+
+        Goal Achievement
+
+    </h5>
+
+    <h2>
+
+        {{ goal_achievement }}%
+
+    </h2>
+
+    <p>
+
+        Progress Towards Financial Goals
+
+    </p>
+
+</div>
+
+
+
+
+</div>
+
+<!-- ================================================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+
+Client Information
+
+</h2>
+
+<table class="info-table">
+
+<tr>
+
+<td>
+
+Client Name
+
+</td>
+
+<td>
+
+{{ name }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Age
+
+</td>
+
+<td>
+
+{{ age }} Years
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Occupation
+
+</td>
+
+<td>
+
+{{ occupation }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Marital Status
+
+</td>
+
+<td>
+
+{{ marital_status }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Mobile
+
+</td>
+
+<td>
+
+{{ mobile }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Email
+
+</td>
+
+<td>
+
+{{ email }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Annual Income
+
+</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(annual_income) }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Monthly SIP
+
+</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(monthly_sip) }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Retirement Age
+
+</td>
+
+<td>
+
+{{ retirement_age }} Years
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Dependents
+
+</td>
+
+<td>
+
+{{ dependents }}
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<!-- ================================================= -->
+<!-- FINANCIAL PROFILE -->
+<!-- ================================================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+
+Financial Profile
+
+</h2>
+
+<p class="text-muted mb-4">
+
+Current investment holdings shared by the client.
+
+</p>
+
+<table class="table table-bordered align-middle">
+
+<thead class="table-dark">
+
+<tr>
+
+<th style="width:70%">
+
+Investment Category
+
+</th>
+
+<th>
+
+Amount (₹)
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% if direct_equity > 0 %}
+
+<tr>
+
+<td>Direct Equity</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(direct_equity) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if mutual_funds > 0 %}
+
+<tr>
+
+<td>Mutual Funds</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(mutual_funds) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if fd > 0 %}
+
+<tr>
+
+<td>Fixed Deposits (FD)</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(fd) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if ppf > 0 %}
+
+<tr>
+
+<td>Public Provident Fund (PPF)</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(ppf) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if epf > 0 %}
+
+<tr>
+
+<td>Employees' Provident Fund (EPF)</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(epf) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if nps > 0 %}
+
+<tr>
+
+<td>National Pension System (NPS)</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(nps) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if bonds > 0 %}
+
+<tr>
+
+<td>Bonds / NCDs / Debentures</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(bonds) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+{% if gold > 0 %}
+
+<tr>
+
+<td>Gold / Silver / Commodities</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(gold) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if real_estate > 0 %}
+
+<tr>
+
+<td>Real Estate (Investment Only)</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(real_estate) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if insurance > 0 %}
+
+<tr>
+
+<td>Insurance / ULIPs / Endowment</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(insurance) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if alternate > 0 %}
+
+<tr>
+
+<td>Alternate Investments (AIF / PMS)</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(alternate) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if cash > 0 %}
+
+<tr>
+
+<td>Cash / Savings / Liquid</td>
+
+<td>
+
+₹ {{ "{:,.0f}".format(cash) }}
+
+</td>
+
+</tr>
+
+{% endif %}
+
+<tr class="table-warning">
+
+<td>
+
+<strong>
+
+Total Investments
+
+</strong>
+
+</td>
+
+<td>
+
+<strong>
+
+₹ {{ "{:,.0f}".format(
+
+direct_equity
++ mutual_funds
++ fd
++ ppf
++ epf
++ nps
++ bonds
++ gold
++ real_estate
++ insurance
++ alternate
++ cash
+
+) }}
+
+</strong>
+
+</td>
+
+</tr>
+</tbody>
+
+</table>
+
+{% if cas_uploaded or cams_uploaded %}
+
+<div class="alert alert-success mt-4">
+
+<h5>
+
+Supporting Documents Submitted
+
+</h5>
+
+<ul class="mb-0">
+
+{% if cas_uploaded %}
+
+<li>
+
+✔ CAS Statement Received
+
+</li>
+
+{% endif %}
+
+{% if cams_uploaded %}
+
+<li>
+
+✔ CAMS / KFintech Statement Received
+
+</li>
+
+{% endif %}
+
+</ul>
+
+</div>
+
+{% endif %}
+
+</div>
+<!-- ================================================= -->
+<!-- FAMILY INFORMATION -->
+<!-- ================================================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+
+Family Information
+
+</h2>
+
+{% if family_members|length > 0 %}
+
+<table class="table table-bordered table-hover align-middle">
+
+<thead class="table-dark">
+
+<tr>
+
+<th style="width:35%">
+
+Name
+
+</th>
+
+<th style="width:25%">
+
+Relation
+
+</th>
+
+<th style="width:15%">
+
+Age
+
+</th>
+
+<th style="width:25%">
+
+Occupation
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for member in family_members %}
+
+<tr>
+
+<td>
+
+{{ member.name }}
+
+</td>
+
+<td>
+
+{{ member.relation }}
+
+</td>
+
+<td>
+
+{{ member.age }}
+
+</td>
+
+<td>
+
+{{ member.occupation }}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+<div class="row mt-4">
+
+<div class="col-md-4">
+
+<div class="alert alert-light border">
+
+<h6>
+
+Family Members Added
+
+</h6>
+
+<h3>
+
+{{ family_count }}
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="col-md-8">
+
+<div class="alert alert-warning">
+
+<strong>
+
+Note
+
+</strong>
+
+<br><br>
+
+Family information helps us understand financial responsibilities and future planning requirements. This information is considered while reviewing insurance, retirement planning, education planning and succession planning.
+
+</div>
+
+</div>
+
+</div>
+
+{% else %}
+
+<div class="alert alert-secondary">
+
+No family information was provided.
+
+</div>
+
+{% endif %}
+
+</div>
+<!-- ================================================= -->
+<!-- GOALS + CHARTS -->
+<!-- ================================================= -->
+
+<div class="row">
+
+<!-- LEFT COLUMN -->
+
+<div class="col-lg-6">
+
+<div class="section">
+
+<h2 class="section-title">
+
+Financial Goals
+
+</h2>
+
+<table class="table table-bordered">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>
+
+Goal
+
+</th>
+
+<th>
+
+Year
+
+</th>
+
+<th>
+
+Achievement
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+
+{{ goal1_name }}
+
+</td>
+
+<td>
+
+{{ goal1_year }}
+
+</td>
+
+<td>
+
+{{ goal1_achievement }}%
+
+</td>
+
+</tr>
+
+{% if goal2_name %}
+
+<tr>
+
+<td>
+
+{{ goal2_name }}
+
+</td>
+
+<td>
+
+{{ goal2_year }}
+
+</td>
+
+<td>
+
+{{ goal2_achievement }}%
+
+</td>
+
+</tr>
+
+{% endif %}
+
+{% if goal3_name %}
+
+<tr>
+
+<td>
+
+{{ goal3_name }}
+
+</td>
+
+<td>
+
+{{ goal3_year }}
+
+</td>
+
+<td>
+
+{{ goal3_achievement }}%
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</tbody>
+
+</table>
+
+<div class="alert alert-success mt-4">
+
+<h5>
+
+Overall Goal Achievement
+
+</h5>
+
+<h2>
+
+{{ goal_achievement }}%
+
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT COLUMN -->
+
+<div class="col-lg-6">
+
+<div class="section">
+
+<h2 class="section-title">
+
+Portfolio Allocation
+
+</h2>
+
+<img
+
+
+src="/{{ allocation_chart }}"
+class="img-fluid">
+
+class="img-fluid rounded shadow-sm">
+
+</div>
+
+<div class="section mt-4">
+
+<h2 class="section-title">
+
+Goal Progress
+
+</h2>
+
+<img
+src="/{{ goal_chart }}"
+class="img-fluid">
+class="img-fluid rounded shadow-sm">
+
+</div>
+
+</div>
+
+</div>
+<!-- ================================================= -->
+<!-- ADVISOR RECOMMENDATIONS -->
+<!-- ================================================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+
+Advisor Recommendations
+
+</h2>
+
+<div class="alert alert-light border-start border-5 border-warning">
+
+<p style="font-size:17px; line-height:1.8; margin-bottom:0;">
+
+{{ advisor_comment }}
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- NEXT STEPS -->
+<!-- ================================================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+
+Recommended Next Steps
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+
+<div class="card h-100 shadow-sm">
+
+<div class="card-body text-center">
+
+<h4>
+
+📊
+
+</h4>
+
+<h5>
+
+Portfolio Review
+
+</h5>
+
+<p>
+
+Review your investments periodically to ensure they remain aligned with your financial goals.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<div class="card h-100 shadow-sm">
+
+<div class="card-body text-center">
+
+<h4>
+
+💰
+
+</h4>
+
+<h5>
+
+Increase Investments
+
+</h5>
+
+<p>
+
+Increase SIPs annually and invest surplus cash to strengthen long-term wealth creation.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<div class="card h-100 shadow-sm">
+
+<div class="card-body text-center">
+
+<h4>
+
+🛡️
+
+</h4>
+
+<h5>
+
+Risk Protection
+
+</h5>
+
+<p>
+
+Review insurance coverage and maintain an emergency fund for financial security.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ACTION BUTTONS -->
+<!-- ================================================= -->
+
+<div class="text-center my-5">
+
+<a
+href="/review-booking"
+class="btn btn-lg btn-danger me-3">
+
+Book Portfolio Review
+
+</a>
+
+
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
+<hr class="mt-5">
+
+<div class="text-center text-muted mb-4">
+
+<p>
+
+<strong>
+
+Wealth GPS
+
+</strong>
+
+<br>
+
+Prepared for {{ name }}
+
+<br>
+
+Generated on {{ report_date }}
+
+</p>
+
+<p style="font-size:14px;">
+
+This report has been generated using the information provided by the client and is intended solely for educational and financial planning purposes. It should not be considered investment advice. Investment decisions should be made in consultation with a qualified financial advisor after considering individual financial circumstances.
+
+</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
