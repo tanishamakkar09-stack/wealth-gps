@@ -26,7 +26,19 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__) 
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 app.secret_key = app.config["SECRET_KEY"] 
-app.config.from_pyfile("config.py")
+import os
+
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
+app.secret_key = app.config["SECRET_KEY"]
+
+app.config["ADMIN_USERNAME"] = os.getenv("ADMIN_USERNAME")
+app.config["ADMIN_PASSWORD"] = os.getenv("ADMIN_PASSWORD")
+
+app.config["MAIL_SERVER"] = os.getenv("MAIL_SERVER")
+app.config["MAIL_PORT"] = int(os.getenv("MAIL_PORT"))
+app.config["MAIL_USE_TLS"] = os.getenv("MAIL_USE_TLS") == "True"
+app.config["MAIL_USERNAME"] = os.getenv("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.getenv("MAIL_PASSWORD")
 mail = Mail(app)
 EXCEL_FILE = "Meeting_Bookings.xlsx"
 UPLOAD_FOLDER = "uploads"
