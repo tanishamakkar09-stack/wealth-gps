@@ -161,14 +161,23 @@ def generate_charts(report):
     # PORTFOLIO ALLOCATION PIE CHART
     # =====================================================
 
-    plt.figure(figsize=(6,6))
+        plt.figure(figsize=(6,6))
 
-    values = [
-        report["equity_pct"],
-        report["debt_pct"],
-        report["gold_pct"],
-        report["cash_pct"]
-    ]
+    import math
+
+    values = []
+
+    for key in ["equity_pct", "debt_pct", "gold_pct", "cash_pct"]:
+
+        try:
+            value = float(report.get(key, 0))
+        except (TypeError, ValueError):
+            value = 0
+
+        if math.isnan(value):
+            value = 0
+
+        values.append(value)
 
     labels = [
         "Equity",
@@ -176,6 +185,10 @@ def generate_charts(report):
         "Gold",
         "Cash"
     ]
+
+    if sum(values) == 0:
+        values = [1]
+        labels = ["No Allocation"]
 
     plt.pie(
         values,
@@ -197,7 +210,6 @@ def generate_charts(report):
     )
 
     plt.close()
-
 
     # =====================================================
     # GOAL PROGRESS BAR CHART
@@ -1346,6 +1358,12 @@ def download_report():
     if not report:
         return "No report data found. Please complete the assessment first."
 
+    print("===== CHART VALUES =====")
+    print("Equity % :", equity_pct)
+    print("Debt %   :", debt_pct)
+    print("Gold %   :", gold_pct)
+    print("Cash %   :", cash_pct)
+    print("========================")
     charts = generate_charts(report)
     report.update(charts)
 
