@@ -1435,19 +1435,7 @@ def book_review():
 
     # -------- Send Email (Optional) -------- #
 
-    try:
-
-        send_confirmation_email(
-            client_name=name,
-            client_email=email,
-            meeting_date=meeting_date,
-            meeting_time=meeting_time,
-            rm_name=relationship_manager
-        )
-
-    except Exception as e:
-
-        print("Email Error:", e)
+    print("Email temporarily disabled")
             # =====================================================
         # =====================================================
     # SAVE BOOKING TO EXCEL
