@@ -12,7 +12,7 @@ from flask import (
 from flask_mail import Mail, Message
 from datetime import datetime
 import sqlite3
-from playwright.sync_api import sync_playwright
+from weasyprint import HTML
 import tempfile
 import os
 import matplotlib
@@ -1340,70 +1340,37 @@ def review_booking():
     )
 @app.route("/download-report", methods=["POST"])
 def download_report():
-    print("Download report route reached")
+
     report = session.get("report")
-    charts = generate_charts(report)
-    report.update(charts)
 
     if not report:
         return "No report data found. Please complete the assessment first."
+
+    charts = generate_charts(report)
+    report.update(charts)
 
     html = render_template(
         "report.html",
         **report
     )
 
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".html", mode="w", encoding="utf-8") as f:
-        f.write(html)
-        temp_html = f.name
-
     filename = f'Anand_Rathi_Preferred_Financial_Report_{report["name"]}.pdf'
 
     pdf_path = os.path.join(
-    REPORT_FOLDER,
-    filename
-)
+        REPORT_FOLDER,
+        filename
+    )
 
-    with sync_playwright() as p:
+    HTML(
+        string=html,
+        base_url=request.host_url
+    ).write_pdf(pdf_path)
 
-        browser = p.chromium.launch()
-
-        page = browser.new_page()
-
-        page.goto(f"file:///{temp_html}")
-
-        page.pdf(
-            path=pdf_path,
-            format="A4",
-            print_background=True,
-            margin={
-                "top": "15mm",
-                "bottom": "15mm",
-                "left": "12mm",
-                "right": "12mm"
-            }
-        )
-
-        browser.close()
-
-    with open(pdf_path, "rb") as pdf_file:
-        pdf_bytes = pdf_file.read()
-
-    os.remove(temp_html)
-    
-
-    response = make_response(pdf_bytes)
-
-    filename = f'Anand_Rathi_Preferred_Financial_Report_{report["name"]}.pdf'
-
-    response.headers["Content-Type"] = "application/pdf"
-    response.headers["Content-Disposition"] = f'attachment; filename="{filename}"'
-
-    return response
-from flask_mail import Mail
-
-
-
+    return send_file(
+        pdf_path,
+        as_attachment=True,
+        download_name=filename
+    )
 # ---------------- BOOK REVIEW ---------------- #
 
 @app.route('/book-review', methods=['POST'])
