@@ -1548,16 +1548,16 @@ Thank you for choosing Anand Rathi Preferred.
 
 Regards,
 
-Anand Rathi Preferred
+Anand Rathi Preferred.
 """
 
-try:
-    mail.send(msg)
-    print("Email sent successfully")
-except Exception as e:
-    print("Email failed:", e)
-# ---------------- CONTACT ---------------- #
+    try:
+        mail.send(msg)
+        print("Email sent successfully")
 
+    except Exception as e:
+        print("Email failed:", e)
+        #-------------------CONTACT-------------------#
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
