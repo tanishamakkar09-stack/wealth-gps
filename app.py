@@ -1361,24 +1361,27 @@ def download_report():
         filename
     )
 
-try:
-    print("Generating PDF...")
-    HTML(
-        string=html,
-        base_url=os.path.abspath(".")
-    ).write_pdf(pdf_path)
-    print("PDF Generated Successfully")
-except Exception as e:
-    print("PDF Error:", e)
-    raise
+    try:
+        print("Generating PDF...")
+
+        HTML(
+            string=html,
+            base_url=os.path.abspath(".")
+        ).write_pdf(pdf_path)
+
+        print("PDF Generated Successfully")
+
+    except Exception as e:
+        print("PDF Error:", e)
+        raise
 
     return send_file(
         pdf_path,
         as_attachment=True,
         download_name=filename
     )
-# ---------------- BOOK REVIEW ---------------- #
 
+# ---------------- BOOK REVIEW ---------------- #
 @app.route('/book-review', methods=['POST'])
 def book_review():
 
