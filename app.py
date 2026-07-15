@@ -45,6 +45,10 @@ UPLOAD_FOLDER = "uploads"
 CAS_FOLDER = os.path.join(UPLOAD_FOLDER, "CAS")
 CAMS_FOLDER = os.path.join(UPLOAD_FOLDER, "CAMS")
 REPORT_FOLDER = "reports"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(CAS_FOLDER, exist_ok=True)
+os.makedirs(CAMS_FOLDER, exist_ok=True)
+os.makedirs(REPORT_FOLDER, exist_ok=True)
 
 os.makedirs(REPORT_FOLDER, exist_ok=True)
 
