@@ -1449,59 +1449,65 @@ def book_review():
 
         print("Email Error:", e)
             # =====================================================
+        # =====================================================
     # SAVE BOOKING TO EXCEL
     # =====================================================
 
     report = session.get("report", {})
 
-    save_booking_to_excel({
+    try:
 
-        "booking_date": datetime.now().strftime("%d-%m-%Y %H:%M"),
+        save_booking_to_excel({
 
-        "name": name,
+            "booking_date": datetime.now().strftime("%d-%m-%Y %H:%M"),
 
-        "mobile": mobile,
+            "name": name,
 
-        "email": email,
+            "mobile": mobile,
 
-        "occupation": report.get("occupation"),
+            "email": email,
 
-        "marital_status": report.get("marital_status"),
+            "occupation": report.get("occupation"),
 
-        "meeting_date": meeting_date,
+            "marital_status": report.get("marital_status"),
 
-        "meeting_time": meeting_time,
+            "meeting_date": meeting_date,
 
-        "meeting_mode": notes,
+            "meeting_time": meeting_time,
 
-        "risk_profile": report.get("risk_profile"),
+            "meeting_mode": notes,
 
-        "annual_income": report.get("annual_income"),
+            "risk_profile": report.get("risk_profile"),
 
-        "monthly_sip": report.get("monthly_sip"),
+            "annual_income": report.get("annual_income"),
 
-        "financial_stability": report.get("financial_stability"),
+            "monthly_sip": report.get("monthly_sip"),
 
-        "readiness": report.get("readiness"),
+            "financial_stability": report.get("financial_stability"),
 
-        "goal_achievement": report.get("goal_achievement"),
+            "readiness": report.get("readiness"),
 
-        "family_count": report.get("family_count"),
+            "goal_achievement": report.get("goal_achievement"),
 
-        "cas_uploaded": "Yes" if report.get("cas_uploaded") else "No",
+            "family_count": report.get("family_count"),
 
-        "cams_uploaded": "Yes" if report.get("cams_uploaded") else "No",
+            "cas_uploaded": "Yes" if report.get("cas_uploaded") else "No",
 
-        "cas_filename": report.get("cas_filename", "Not Uploaded"),
+            "cams_uploaded": "Yes" if report.get("cams_uploaded") else "No",
 
-        "cams_filename": report.get("cams_filename", "Not Uploaded"),
+            "cas_filename": report.get("cas_filename", "Not Uploaded"),
 
-        "remarks": notes,
+            "cams_filename": report.get("cams_filename", "Not Uploaded"),
 
-        "pdf_report": f'Anand_Rathi_Preferred_Financial_Report_{name}.pdf'
+            "remarks": notes,
 
-    })
+            "pdf_report": f"Anand_Rathi_Preferred_Financial_Report_{name}.pdf"
 
+        })
+
+    except Exception as e:
+
+        print("Excel Save Error:", e)
     # -------- Booking Success Page -------- #
 
     return render_template(
@@ -1557,7 +1563,11 @@ Regards,
 Anand Rathi Preferred
 """
 
+try:
     mail.send(msg)
+    print("Email sent successfully")
+except Exception as e:
+    print("Email failed:", e)
 # ---------------- CONTACT ---------------- #
 
 @app.route('/contact')
