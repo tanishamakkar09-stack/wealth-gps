@@ -161,7 +161,7 @@ def generate_charts(report):
     # PORTFOLIO ALLOCATION PIE CHART
     # =====================================================
 
-        plt.figure(figsize=(6,6))
+    plt.figure(figsize=(6,6))
 
     import math
 
