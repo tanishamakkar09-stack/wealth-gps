@@ -1359,10 +1359,10 @@ def download_report():
         return "No report data found. Please complete the assessment first."
 
     print("===== CHART VALUES =====")
-    print("Equity % :", equity_pct)
-    print("Debt %   :", debt_pct)
-    print("Gold %   :", gold_pct)
-    print("Cash %   :", cash_pct)
+    print("Equity % :", report.get("equity_pct"))
+    print("Debt % :", report.get("debt_pct"))
+    print("Gold % :", report.get("gold_pct"))
+    print("Cash % :", report.get("cash_pct"))
     print("========================")
     charts = generate_charts(report)
     report.update(charts)
